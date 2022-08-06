@@ -44,7 +44,7 @@
     <EditText
         android:id="@+id/txtUser"
         android:layout_width="0dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="Qual seu nome?"
@@ -84,6 +84,7 @@
         android:ems="10"
         android:hint="Temperatura em Celsius"
         android:inputType="numberDecimal"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
