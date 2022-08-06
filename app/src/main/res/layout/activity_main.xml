@@ -10,7 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Álcool ou Gasolina"
+        android:text="Temperatura Celsius - Fahrenheit"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,29 +28,29 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/gas" />
+        app:srcCompat="@drawable/temp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:text="Melhor opção para seu carro Flex"
+        android:text="Informe a temperatura em graus Celsius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/txtAlcool"
+        android:id="@+id/txtUser"
         android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
-        android:hint="Preço do Álcool"
-        android:inputType="numberDecimal"
+        android:hint="Qual seu nome?"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -63,31 +63,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGasolina" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTemperatura" />
 
     <TextView
         android:id="@+id/txtResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="Pressione Calcular para obter resultado"
+        android:text="Pressione Calcular para obter resultado em graus Fahreinheit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
 
     <EditText
-        android:id="@+id/txtGasolina"
+        android:id="@+id/txtTemperatura"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Preço da Gasolina"
+        android:hint="Temperatura em Celsius"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAlcool" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUser" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

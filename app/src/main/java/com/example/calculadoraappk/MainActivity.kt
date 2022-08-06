@@ -13,46 +13,47 @@ class MainActivity : AppCompatActivity() {
         val buttonCalcular = btnCalcular
 
         buttonCalcular.setOnClickListener{
-            calcularPreco(it)
+            calcularConversao(it)
         }
     }
 
-    fun calcularPreco(view: View){
+    fun calcularConversao(view: View){
 
-        val precoAlcool = txtAlcool.text.toString()
-        val precoGasolina = txtGasolina.text.toString()
+        val user = txtUser.text.toString()
+        val temperatura = txtTemperatura.text.toString()
 
-        val validaCampos = validarCampos(precoAlcool, precoGasolina)
-        if (validaCampos){
-            calcularMelhorPreco(precoAlcool, precoGasolina)
+        val validaCampo = validarCampo(temperatura)
+        if (validaCampo){
+            val calculado = calcularFahreinheit(temperatura)
+
+            // Caso o usuário não se identifique, mencione não saber quem é, e informe o resultado
+            if (user == ""){
+                txtResultado.text = "Sei lá quem é você, mas o valor em graus Fahreinheit é " + calculado.toString()
+            }
+            // Caso o usuário se identifique, cite seu nome e informe o resultado
+            else {
+                txtResultado.text = "Caro " + user + ", o valor em graus Fahreinheit é " + calculado.toString()
+            }
+
         } else {
-            txtResultado.text = "Preencha valores de combustível válidos!!!"
+            txtResultado.text = "Preencha valor de temperatura válido!!!"
         }
 
     }
 
-    private fun calcularMelhorPreco(precoAlcool: String, precoGasolina: String) {
+    // Função para calcular a temperatura em graus Fahreinheit à partir de input em graus Celsius
+    private fun calcularFahreinheit(tempCelsius: String): Double {
+        val celsius = tempCelsius.toDouble()
 
-        var valorAlcool = precoAlcool.toDouble()
-        var valorGasolina = precoGasolina.toDouble()
-
-        val resultadoPreco = valorAlcool / valorGasolina
-
-        if (resultadoPreco >= 0.7){
-            txtResultado.text = "Melhor utilizar Gasolina!"
-        } else {
-            txtResultado.text = "Melhor utilizar Álcool!"
-        }
-
+        return (celsius * 9.0 / 5.0) + 32.0
 
     }
 
-    private fun validarCampos(precoAlcool: String, precoGasolina: String): Boolean {
+    // Validando se o valor informado é nulo ou vazio
+    private fun validarCampo(numero: String): Boolean {
         var camposValidados: Boolean = true
 
-        if (precoAlcool == null || precoAlcool.equals("")){
-            camposValidados = false
-        } else if (precoGasolina == null || precoGasolina.equals("")){
+        if (numero == null || numero.equals("")) {
             camposValidados = false
         }
         return camposValidados
